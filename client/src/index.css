@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  --illuminating-emerald: #359381;
+  --ghost-white: #f9f9f9;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--ghost-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--illuminating-emerald);
+}
+
+body{
+  background-color: var(--ghost-white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  min-height: 100vh; 
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+a, .nav-link{
+  text-decoration: none;
+  color: inherit;
+}
+
+input, button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.loader-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid var(--illuminating-emerald);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+.header{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--illuminating-emerald);
+  margin-top: 20px;
+  z-index: 100;
+}
+
+.icon{
+  margin-left: 30px;
+}
+
+.nav-bar{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-bar a, .navbar-bar .nav-link {
+  padding: 2px 9px 0 9px;
+  margin: 5px;
+  border: 2px solid transparent;
+  transition: border-color 200ms ease;
+}
+
+.nav-bar a:hover, .navbar-bar .nav-link:hover{
+  border-color: var(--illuminating-emerald);
+}
+
+.logout-button{
+  position: relative;
+  padding: 2px 9px 0 9px;
+  margin: 5px;
+  border: 2px solid transparent;
+  transition: border-color 200ms ease;
+  cursor: pointer;
+}
+.logout-button:hover{
+  border-color: var(--illuminating-emerald);
+}
+
+.logout-tools{
+  position: absolute;
+  display: none;
+  left: -5px;
+  width: 100px;
+  font-size: 0.8em;
+  margin: 0;
+  padding: 2px;
+  transition: all 200ms ease;
+}
+
+.logout-tools ul{
+  list-style: none;
+}
+
+.logout-button:hover .logout-tools{
+  display: block;
+}
+
+.logout-tools-list{
+  padding: 1px 2px;
+  border-bottom: 2px solid transparent;
+}
+.logout-tools-list:hover{
+  border-color: var(--illuminating-emerald);
+}
+
+.logo-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--illuminating-emerald);
+  font-size: 2em;
+  letter-spacing: 3px;
+}
+
+.logo-left-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--illuminating-emerald);
+  color: var(--ghost-white);
+  height: 100%;
+  padding: 3px 9px 0 9px;
+}
+
+.logo-right-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 3px 9px 0 9px;
+}
+
+.parallax{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px ;
+}
+
+/* .parallax::after {
+  content: "";
+  width: 100%;
+  height: 150px;
+  background-color: #003329;
+  position: absolute;
+  bottom: -120px;
+  z-index: -1;
+} */
+
+
+.parallax-text {
+  position: absolute;
+  font-size: 5em;
+  color: var(--ghost-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+  
+
+
+.parallax img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+
+.sec{
+  position: relative;
+  background-color: #003329;
+  color: var(--ghost-white);
+  margin-top: 120px;
+  padding-top: 100px;
+  min-height: 150vh;
+}
+
+.sec-text{
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  letter-spacing: 5px;
+}
+
+
+.sec-paragraph{
+  font-family: sans-serif;
+  padding: 0 150px 60px;
+  font-size: 0.7em;
+  text-align: justify;
+  font-weight: 100;
+
+}
+
+.footerImage{
+  width: 100%;
+  margin-top: -250px;
+  transform: translateY(6px);
+  z-index: -1;
+}
+
+.autoShow{
+  animation: autoShowAnimation both;
+  animation-timeline: view(80% 5%);
+}
+
+@keyframes autoShowAnimation {
+  from{
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1) ;
+  }
+}
+
+
+.login-signUp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/login-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.formfield{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--illuminating-emerald);
+  transform: translateX(50px);
+}
+
+.sign-log-heading{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  background-color: var(--illuminating-emerald);
+  width: 350px;
+  height: 250px;
+  padding: 0 25px;
+  color: var(--ghost-white);
+}
+
+.sign-log-heading-text{
+  font-size: 2em;
+}
+
+.sign-log-heading-paragraph{
+  font-size: .7em;
+}
+
+.form-filler{
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  width: 370px;
+  height: 250px;
+  padding: 0 25px;
+  overflow: hidden;
+
+}
+
+.inputField{
+  display: grid;
+  grid-template-columns: .2fr 2fr 1fr;  
+  align-items: center;
+  gap: 10px;
+  width: 320px;
+  border: 1px solid var(--illuminating-emerald);
+  border-radius: 30px;
+  padding: 0 10px;
+  margin: 20px 0;
+}
+
+
+
+.inputField input{
+  font-size: 1em;
+  width: 250px;
+}
+
+.error-messages{
+  font-size: 0.7em;
+  color: red;
+  width: max-content;
+}
+
+.inputField:has(.error-messages){
+  border-color: red;
+}
+
+.inputField:has(.error-messages) input:last-of-type {
+  width: 120px;
+
+}
+
+.forgot-password{
+  font-size: .7em;
+  margin-bottom: 10px;
+  color: var(--illuminating-emerald);
+  cursor: pointer;
+}
+
+.submit-button{
+  border: 1px solid var(--illuminating-emerald);
+  border-radius: 20px;
+  padding: 5px;
+  width: 100px;
+  color: var(--illuminating-emerald);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: .9em;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.submit-button:hover{
+  background-color: var(--illuminating-emerald);
+  color: var(--ghost-white);
+}
+.account-exists{
+  font-size: .9em;
+  margin-bottom: 20px;
+}
+
+.log-reg-nav{
+  color: var(--illuminating-emerald);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+
+.coconut-tree {
+  transform-origin: bottom center;
+  transition: transform 1s ease;
+  z-index: 1;
+}
+
+.coconut-tree-left{
+  margin-left: 100px;
+}
+
+.shake1 {
+  animation: shake1 2s ease-in-out;
+}
+.shake2 {
+  animation: shake2 2s ease-in-out;
+}
+
+@keyframes shake1 {
+  0%{ transform: rotate(0deg); }
+  50% {transform: rotate(-50deg);}
+  100%{ transform: rotate(0deg); }
+}
+
+@keyframes shake2 {
+  0%{ transform: rotate(0deg); }
+  50% {transform: rotate(50deg);}
+  100%{ transform: rotate(0deg); }
+}
+
+.otp-bg{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 640px;
+}
+
+.otp-bg-image{
+  position: absolute;
+  width: 100%;
+  height: 650px;
+}
+
+
+.otp-form{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  border: 3px solid var(--illuminating-emerald);
+  color: var(--illuminating-emerald);
+  font-size: 1.45em;
+  padding: 20px 0 25px 0;
+}
+
+.email-verfy-heading-text{
+  color: #003329;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.email-verfy-heading-paragraph{
+  font-size: .7em;
+  text-align: center;
+}
+
+.email-very-otp{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.email-very-otp-field{
+  border: 2px solid var(--illuminating-emerald);
+  margin: 30px 0; 
+  padding: 0 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.email-very-otp-field:focus{
+  border-color: #003329;
+}
+
+.email-verfy-button{
+  background-color: var(--illuminating-emerald);
+  border: 2px solid var(--illuminating-emerald);
+  color: var(--ghost-white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: .7em;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.email-verfy-button:hover{
+  background-color: transparent;
+  border: 2px solid var(--illuminating-emerald);
+  color: var(--illuminating-emerald);
+}
+
+.password-reset-email-field{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  border: 2px solid var(--illuminating-emerald);
+  border-radius: 20px;
+  height: 40px;
+  margin: 20px 0;
+}
+.password-reset-email-field input{
+  height: inherit;
+  font-size: .7em;
+  color: #003329;
+}
+
+.password-reset-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.password-reset-button{
+  background-color: var(--illuminating-emerald);
+  border: 2px solid var(--illuminating-emerald);
+  border-radius: 30px;
+  color: var(--ghost-white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: .7em;
+  padding: 10px;
+  width: 150px;
+  left: 50%;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.password-reset-button:hover{
+  background-color: transparent;
+  border: 2px solid var(--illuminating-emerald);
+  color: var(--illuminating-emerald);
+}
