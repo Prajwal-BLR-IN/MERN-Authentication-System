@@ -9,7 +9,10 @@ import userRouter from "./routes/userRoutes.js";
 const app = express();
 const PORT = process.env.PORT || 4000;
 await connectDB();
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://mern-authentication-system-lovat.vercel.app",
+];
 
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(cookieParser());
