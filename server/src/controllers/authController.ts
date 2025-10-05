@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import userModel from "../models/userModel";
-import transporter from "../config/nodemailer";
+import userModel from "../models/userModel.js";
+import transporter from "../config/nodemailer.js";
 
 // // Register Controller function
 // const register = async (req: Request, res: Response) => {
